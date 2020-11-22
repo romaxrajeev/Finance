@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Financier</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="static/css/main.css" rel="stylesheet">
 </head>
 <body>
-$END$
+    <div class="container container-full">
+        <div class="row mt-4">
+            <a  href="/home"><img src="/static/img/Financier.png" height="38px" width="200px" class="img-fluid ml-auto mr-auto ml-md-0 mr-md-0"></a>
+        </div>
+        <div class="row mt-2">
+            <div class="d-none d-md-block col-md-7">
+                <!--Image-->
+                    <p class="header-text">Get your financial goals on track.</p>
+                    <p class="below-header-text">Save Smart.</p>
+                <img src="static/img/money saving.png" height="354px" width="500px" class="img-fluid image">
+            </div>
+            <div class="col-12 col-md-1"></div>
+            <div class="col-12 col-md-4">
+                <!--Login-->
+                <div class="row mt-5 form text-center">
+                    <p class="header-text mt-5" style="text-align: center;">Have an account?</p>
+                    <form class="mt-5" action="/" method="post">
+                        <div class="form-group">
+                            <input type="email" name="email" class="new-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="new-input" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="login" value="login" class="btn dark-btn">Login</button>
+                        </div>
+                        <a href="/forgotpass" class="below-header-text" style="text-decoration: none; font-size: 1em">Forgot your password?</a>
+                    </form>
+                    <div class="signup mt-5">
+                        <p class="below-header-text" style="margin-top: 5%; font-size: 1em">Not yet having an account?</p>
+                        <a href="/signup"><button class="btn bordered-btn">Sign up</button></a>
+                    </div>
+                    <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Created by Code 200</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
