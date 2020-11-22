@@ -13,4 +13,4 @@ Backend: Flask
 
 Database: Firebase (along with email authentication)
 
-Youtube link to our project: 
+Youtube link to our project: https://youtu.be/lpGxCktrcnA
