@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finance App - Create Account</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="static/css/main.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container container-full">
+        <div class="row mt-5">
+            <div class="d-none d-md-block col-md-7">
+                <!--Image-->
+                    <p class="header-text">Get your financial goals on track.</p>
+                    <p class="below-header-text">Save Smart.</p>
+                <img src="static/img/money saving.png" height="354px" width="500px" class="img-fluid image">
+            </div>
+            <div class="col-12 col-md-1"></div>
+            <div class="col-12 col-md-4">
+                <!--Login-->
+                <div class="row mt-5 form text-center">
+                    <p class="header-text mt-5" style="text-align: center;">Create an account</p>
+                    <form class="mt-5" action="/signup" method="post">
+                        <div class="form-group">
+                            <input type="text" name="uname" class="new-input" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="new-input" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" class="new-input" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" class="new-input" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="income" class="new-input" placeholder="Monthly Salary" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" value="signup" class="btn dark-btn">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Created by Code 200</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

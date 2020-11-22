@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+body {
+  font-family: "Nunito";
+  padding-bottom: 80px;
+}
+
+.image {
+  margin-top: 3%;
+}
+
+.header-text {
+  color: #03388C;
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 10%;
+}
+
+.below-header-text {
+  color: #388EE9;
+  font-size: 1.25em;
+}
+
+.new-input {
+  background-color: #F5F5F5;
+  border: none;
+  padding: 0.75em;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.new-input::-webkit-input-placeholder {
+  color: #388EE9;
+}
+
+.new-input:-ms-input-placeholder {
+  color: #388EE9;
+}
+
+.new-input::-ms-input-placeholder {
+  color: #388EE9;
+}
+
+.new-input::placeholder {
+  color: #388EE9;
+}
+
+.dark-btn {
+  color: #ffffff;
+  margin-top: 5%;
+  background-color: #03388C;
+  border-radius: 8px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.form {
+  text-align: center !important;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 20% !important;
+}
+
+.signup {
+  text-align: center;
+}
+
+.bordered-btn {
+  background-color: #ffffff;
+  color: #03388C;
+  border: 3px solid #03388C;
+  border-radius: 9px;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+.footer {
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #03388C;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.15em;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  height: 80px;
+  width: 100%;
+}
+
+.footer p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-full {
+  min-height: 100%;
+  position: relative;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  border: none;
+  background-color: transparent;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.card:hover .content {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.front, .back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 60px;
+  border-radius: 15px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #C3E4F8;
+}
+
+.front img {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.goal-type-text {
+  color: #03388C;
+  font-weight: 700;
+  font-size: 2em;
+  margin-top: -15%;
+}
+
+.goal-name-text {
+  color: #388EE9;
+  font-weight: 500;
+  font-size: 1.25em;
+}
+
+.success-text {
+  color: #25F295;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.danger-text {
+  color: #F22525;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.goal-info {
+  color: #03388C;
+  font-size: 1.25em;
+  font-weight: 500;
+}
+/*# sourceMappingURL=main.css.map */

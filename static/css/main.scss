@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+$light-blue : #C3E4F8;
+$dark-blue : #03388C;
+$text-light-blue : #388EE9;
+$light-grey : #F5F5F5;
+$white : #ffffff;
+$success : #25F295;
+$danger : #F22525;
+
+body{
+    font-family: "Nunito";
+    padding-bottom: 80px;
+}
+
+.image {
+    margin-top: 3%;
+}
+
+.header-text {
+    color: $dark-blue;
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 10%;
+}
+
+.below-header-text {
+    color: $text-light-blue;
+    font-size: 1.25em;
+}
+
+.new-input {
+    background-color: $light-grey;
+    border: none;
+    padding: 0.75em;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.new-input::placeholder {
+    color: $text-light-blue;
+}
+
+.dark-btn{
+    color: $white;
+    margin-top: 5%;
+    background-color: $dark-blue;
+    border-radius: 8px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.form {
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 20% !important;
+}
+
+.signup{
+    text-align: center;
+}
+
+.bordered-btn {
+    background-color: $white;
+    color: $dark-blue;
+    border: 3px solid $dark-blue;
+    border-radius: 9px;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+.footer {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: $dark-blue;
+    color: $white;
+    font-weight: 400;
+    font-size: 1.15em;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    p{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.container-full{
+    min-height: 100%;
+    position: relative;
+}
+
+.card {
+    width: 250px;
+    height: 300px;
+    perspective: 500px;
+    border: none;
+    background-color: transparent;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .content {
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .card:hover .content {
+    transform: rotateY( 180deg ) ;
+    transition: transform 0.5s;
+  }
+  
+  .front,.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 300px;
+    color: #03446A;
+    text-align: center;
+    font-size: 60px;
+    border-radius: 15px;
+    backface-visibility: hidden;
+    box-shadow: none;
+    background-color: $light-blue;
+  }
+
+  .front {
+      img{
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+  }
+  
+  .back {
+    transform: rotateY( 180deg );
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  .goal-type-text{
+    color: $dark-blue;
+    font-weight: 700;
+    font-size: 2em;
+    margin-top: -15%;
+  }
+
+  .goal-name-text{
+    color: $text-light-blue;
+    font-weight: 500;
+    font-size: 1.25em;
+  }
+
+  .success-text{
+    color: $success;
+    font-weight: 700;
+    font-size: 2em;
+  }
+
+  .danger-text{
+    color: $danger;
+    font-weight: 700;
+    font-size: 2em;
+  }
+
+  .goal-info{
+    color: $dark-blue;
+    font-size: 1.25em;
+    font-weight: 500;
+  }

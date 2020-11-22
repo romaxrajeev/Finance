@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <title>Add New Goal</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-4" style="margin-top: -5%;">
+                <a  href="/home"><img src="/static/img/Financier.png" height="45px" width="239px" class="img-fluid"></a>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4">
+                <!--Button-->
+                <a href="/logout"><button class="btn bordered-btn float-right">Logout</button></a>
+            </div>
+        </div>
+        <div class="row">
+			<p class="header-text ml-auto mr-auto" style="margin-top: 5%;">Add a New Goal</p>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 text-center space ml-auto mr-auto ml-md-0 mr-md-0">
+                <div class="single-card text-center">
+                    <div class="single-card-front">
+                        <img src="/static/img/{{ goaltype }}.png">
+                        <div class="single-card-text">{{ goaltype[0]|upper }}{{ goaltype[1:] }}</div>
+                    </div>
+                </div>
+            </div>
+    
+        <div class="col-12 col-md-6 ml-auto mr-auto ml-md-0 mr-md-0">
+                <form class="mt-5" action="/addgoal/{{goaltype}}" method="post">
+                    <div class="form-group">
+                        <input type="text" name="goalname" class="new-input" placeholder="Name for the Goal" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="amount" class="new-input" placeholder="Goal Amount" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="months" class="new-input" placeholder="Number of Months" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" name="add_goal" value="Add Goal" class="btn dark-btn">Add Goal</button>
+                    </div>
+                </form>
+                <br>
+                </div>
+            </div>
+	</div>
+
+</body>
+</html>

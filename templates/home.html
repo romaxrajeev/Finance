@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/style.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.js"></script>
+	<script src="/static/js/bootstrap-auto-dismiss-alert.js"></script>
+	<script type="text/javascript">
+		$(document).ready( () => {
+			function Circlle(el){
+			let green = '#85f7b4';
+			$(el).circleProgress({fill: {color:green}}).on('circle-animation-progress', function(event, progress, stepValue){
+			});
+		};
+		Circlle('.round');
+		});	
+	</script>
+	<title>Home</title>
+</head>
+<body>
+<div class="container container-full">   
+	<div class="row mt-4">
+		<div class="col-4" style="margin-top: -5%;">
+			<a  href="/home"><img src="/static/img/Financier.png" height="45px" width="239px" class="img-fluid"></a>
+		</div>
+		<div class="col-4"></div>
+		<div class="col-4">
+			<!--Button-->
+			<a href="/logout"><button class="btn bordered-btn float-right">Logout</button></a>
+		</div>
+	</div>
+	
+	<!--Alert-->
+	{% for message in get_flashed_messages() %}
+	<div class="alert alert-success alert-dismissbile mt-5" data-auto-dismiss role="alert">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Success!</strong><br>
+		You need to save <b>&#8377;{{ message }}</b> every month to meet this new goal.
+	</div>
+	{% endfor %}
+
+	{% if not goals %}
+	<div class="row">
+		<p class="header-text" style="margin-top: 3%;">You have not yet set any goals.</p>
+	</div>
+	<div class="row mt-0">
+		<p class="below-header-text">Add one by selecting one of the three options.</p>
+	</div>
+	{% else %}
+	<div class="row">
+		<p class="header-text ml-auto mr-auto" style="margin-top:4% !important;">Your Active Goals</p>
+	</div>
+
+	<section id="progressbar">
+		<div class="row">
+			{% for goal in goals %}
+			<!--Loop-->
+			{% set percent = goal.percentage / 100 %}
+			<div class="col-md-4">
+				<div class="round" data-value = "{{ percent }}" data-size="200" data-thickness="20">
+					<strong>{{ goal.percentage }}%</strong>
+				</div>
+				<a href="/showgoal/{{ goal.id }}">
+				<p class="goal-type-text">{{ goal.type[0]|upper }}{{ goal.type[1:] }}</p></a>
+				<p class="goal-name-text">{{ goal.name }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+
+	<div class="row text-center" style="margin-left: auto; margin-right: auto; display: block">
+		<button class="btn dark-btn" data-toggle="modal" data-target="#expenditure">Add Expenditure</button>
+	</div>
+
+	<div class="modal fade" id="expenditure" tabindex="-1" role="dialog" aria-labelledby="expenditureLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="expenditureLabel">Add Expenditure</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <form action="/home" method="post">
+				<div class="form-group">
+					<input type="text" placeholder="Enter Expenditure" class="new-input" name="expenditure" required>
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn dark-btn" value="addExp">Add Expenditure</button>
+				</div>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	{% endif %}
+	<div class="row mt-2">
+		<p class="header-text ml-auto mr-auto" style="margin-top: 3%;">Add a New Goal</p>
+	</div>
+
+	<div class="row mt-5">
+		<div class="col-12 col-md-4 mt-2 mt-md-0">
+			<div class="card">
+				<div class="content">
+				<div class="front">
+					<img src="/static/img/gold.png" class="text-center img-fluid">
+				</div>
+				<a style="text-decoration: none; color: inherit;" href="/addgoal/gold">
+				<div class="back">
+					Gold
+				</div>
+				</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4 mt-5 mt-md-0">
+			<div class="card">
+				<div class="content">
+				<div class="front">
+					<img src="/static/img/medical.png" class="text-center img-fluid">
+				</div>
+				<a style="text-decoration: none; color: inherit;" href="/addgoal/medical">
+				<div class="back">
+					Medical
+				</div>
+				</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4 mt-5 mt-md-0">
+			<div class="card">
+				<div class="content">
+				<div class="front">
+					<img src="/static/img/others.png" class="text-center img-fluid">
+				</div>
+				<a style="text-decoration: none; color: inherit;" href="/addgoal/others">
+				<div class="back">
+					Others
+				</div>
+				</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+</body>
+</html>
