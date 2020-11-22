@@ -12,3 +12,5 @@ Frontend: HTML, CSS, SASS, JS, Bootstrap4
 Backend: Flask  
 
 Database: Firebase (along with email authentication)
+
+Youtube link to our project: 
