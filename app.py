@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, session, flash
 from flask.globals import request
+from apiData import *
 from oauth2client.client import Error
 import pyrebase
 import math
@@ -7,16 +8,16 @@ import datetime
 import time
 
 app = Flask(__name__)
-app.secret_key = "rutujasushrutromax"
+app.secret_key = secretKey
 
 config = {
-    "apiKey": "AIzaSyB2PFHOuZV-VHuGe8id2-mvC4lol5VNBEQ",
-    "authDomain": "finance-project-5dd71.firebaseapp.com",
-    "databaseURL": "https://finance-project-5dd71.firebaseio.com",
-    "projectId": "finance-project-5dd71",
-    "storageBucket": "finance-project-5dd71.appspot.com",
-    "messagingSenderId": "1085891983951",
-    "appId": "1:1085891983951:web:020be648e88a24e220883a"
+    "apiKey": apiKey,
+    "authDomain": authDomain,
+    "databaseURL": dbUrl,
+    "projectId": projectID,
+    "storageBucket": storage,
+    "messagingSenderId": msgSender,
+    "appId": appID
 }
 
 firebase = pyrebase.initialize_app(config)
